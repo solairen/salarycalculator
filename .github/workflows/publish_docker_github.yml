@@ -1,0 +1,24 @@
+name: Docker image
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish docker image to Docker repository
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: moleszek/salarycalculator
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        tags: "latest"
+    - name: Update Docker README
+      uses: peter-evans/dockerhub-description@v2.1.0
+      env:
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        DOCKERHUB_REPOSITORY: moleszek/salarycalculator
+        README_FILEPATH: README.md

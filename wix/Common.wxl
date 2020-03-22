@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="Company">Funny Company</String>
+  <String Id="CompanyNameFolder">Funny Company</String>
+  <String Id="ProductNameFolder">Salary Calculator</String>
+  <String Id="ProductName_x86">Salary Calculator (32bit)</String>
+  <String Id="ProductName_x64">Salary Calculator (64bit)</String>
+  <String Id="Language">1033</String>
+  <String Id="DowngradeErrorMessage">The newest version is installed!</String>
+</WixLocalization>

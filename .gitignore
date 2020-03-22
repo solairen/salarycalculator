@@ -1,0 +1,7 @@
+.vscode/*
+salarycalculator/.vscode/*
+salarycalculator/obj/Debug/*
+salarycalculator/obj/Release/*
+salarycalculator/bin/*
+wix/bin/*
+wix/obj/*
