@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Publish docker image to Docker repository
-      uses: elgohr/Publish-Docker-Github-Action@master
+    - name: Publish to docker hub
+      uses: moleszek/docker_tag@1.2
       with:
-        name: moleszek/salarycalculator
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        tags: "latest"
+        repository: "moleszek/salarycalculator"
+        tag_latest: "false"
     - name: Update Docker README
       uses: peter-evans/dockerhub-description@v2.1.0
       env:
