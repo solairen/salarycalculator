@@ -1,5 +1,3 @@
-![Docker image](https://github.com/moleszek/salarycalculator/workflows/Docker%20image/badge.svg) [![CodeFactor](https://www.codefactor.io/repository/github/moleszek/salarycalculator/badge)](https://www.codefactor.io/repository/github/moleszek/salarycalculator)
-
 ## SalaryCalculator
 
 ### About:
