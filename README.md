@@ -8,17 +8,18 @@ Simpe application that calculates the salary based on the hours specified and th
 
 * Language: C#
 * Framework: netCore 3.1
+* Tools: Wix Toolset
 
 ### Additional information:
 
-This program can be also build as a docker container
+Add "C:\Program Files (x86)\WiX Toolset v3.11\bin" to user path.
 
 #### To build as a standalone application that contains .msi installer:
 
-* OS: Windows only
+* OS: Windows
 
 * Use script: 
-    * buildstandalone.ps1
+    * build_windows.ps1
 
 #### To build as a docker container:
 
@@ -26,11 +27,19 @@ This program can be also build as a docker container
 
 * Use script:
     
-    * builddocker.ps1
+    * build_docker.ps1
+
+#### To build as a standalone application for Linux:
+
+* OS: Linux
+
+* Use script:
+
+    * build_linux.ps1
 
 ### To pull image from docker hub:
 
-* docker pull moleszek/salarycalculator:latest
+* docker pull moleszek/salarycalculator:1.1
 
 ### Usage:
 
@@ -41,4 +50,8 @@ This program can be also build as a docker container
 
 * Docker:
 
-    * docker run --rm moleszek/salarycalculator:latest -h/hours 100 -hw/hourlywage 10
+    * docker run --rm moleszek/salarycalculator:1.1 -h/hours 100 -hw/hourlywage 10
+
+* Linux:
+
+    * dotnet run SalaryCalculator.dll -h/hours 100 -hw/hourlywage 10

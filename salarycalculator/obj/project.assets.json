@@ -8,14 +8,6 @@
           "build/Microsoft.Packaging.Tools.Trimming.targets": {}
         }
       }
-    },
-    ".NETCoreApp,Version=v3.1/win10-x64": {
-      "Microsoft.Packaging.Tools.Trimming/1.1.0-preview1-26619-01": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.Packaging.Tools.Trimming.targets": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -113,31 +105,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[3.1.2, 3.1.2]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[3.1.2, 3.1.2]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win10-x64": {
-        "#import": []
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

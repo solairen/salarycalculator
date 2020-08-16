@@ -68,6 +68,24 @@
       <Component Id="cmp018869E2A4ED4E8AA134032265CB971B" Guid="{D49DA778-F2CF-4993-962B-2EBBE0B9117F}">
         <File Id="filD5234AAB782F4C15BC0F1D547B888A86" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Tasks.dll" />
       </Component>
+      <Component Id="cmp03F32D3770A84124937E9E3C5DF4EDBE" Guid="{123AD3D8-7B54-4137-B21C-ED288D3BB958}">
+        <File Id="fil5C46E0CA79594B5E9B35F977114D5659" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Collections.dll" />
+      </Component>
+      <Component Id="cmpDF1496D5DC7E4019A1C6E3188183F614" Guid="{9CD909D8-4015-482B-ABB7-A53CABEAD545}">
+        <File Id="fil8C40679DEE194951B5119D553C5E68A7" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Debug.dll" />
+      </Component>
+      <Component Id="cmpC0B520C4600243189727B8269CAB300A" Guid="{0B464E82-E36F-46E4-9341-7100DCEDAA99}">
+        <File Id="fil02526E55EEFD4D6E85748830F7A45EA1" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Tools.dll" />
+      </Component>
+      <Component Id="cmp3D209DB610F343F1A2657F2677EAAE8D" Guid="{5384D43E-E2BE-4709-8ACA-1E2043A0CDC9}">
+        <File Id="fil76A003F24F064F04BA271AC7E7E2600A" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.IO.FileSystem.dll" />
+      </Component>
+      <Component Id="cmpDE4704471917499FABC94E84737D4093" Guid="{B69A5A18-26D9-425E-B2B8-99A8F2A710D4}">
+        <File Id="fil64D29DAB3CEA4B6D880BEED0D80BE00A" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Linq.dll" />
+      </Component>
+      <Component Id="cmpDC42EAA057DC4D6F9265DF391B1A5C5F" Guid="{7823FCF3-FFD0-456E-B10A-4BE6D06474D0}">
+        <File Id="fil052D6E0B32C745E6ACBBFBF633372381" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Thread.dll" />
+      </Component>
     </DirectoryRef>
   </Fragment>
   <Fragment>
@@ -94,6 +112,12 @@
       <ComponentRef Id="cmp40196DD6F3504C2B98C62290EEE3C0AB" />
       <ComponentRef Id="cmp70B4B57A6CE743518AD04C6AE199E92C" />
       <ComponentRef Id="cmp018869E2A4ED4E8AA134032265CB971B" />
+      <ComponentRef Id="cmp03F32D3770A84124937E9E3C5DF4EDBE" />
+      <ComponentRef Id="cmpDF1496D5DC7E4019A1C6E3188183F614" />
+      <ComponentRef Id="cmpC0B520C4600243189727B8269CAB300A" />
+      <ComponentRef Id="cmp3D209DB610F343F1A2657F2677EAAE8D" />
+      <ComponentRef Id="cmpDE4704471917499FABC94E84737D4093" />
+      <ComponentRef Id="cmpDC42EAA057DC4D6F9265DF391B1A5C5F" />
     </ComponentGroup>
   </Fragment>
 </Wix>

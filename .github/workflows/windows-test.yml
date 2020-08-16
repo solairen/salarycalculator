@@ -1,0 +1,12 @@
+name: Windows test
+on:
+  pull_request
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@main
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+    - run: dotnet test test/test.csproj
