@@ -1,13 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5dclRriv8HH/5YA1cJULNqAaGsBlbT8Iiz0OKyslvuv6hjD8nqA1axKhnjpCIyeVp6P9I+K/b8UYNZuje5mcbQ==",
+  "dgSpecHash": "SDMJRzc8SJ8kxxp/XUf4LLWuKdgRhhjbtvxXmP+mkX90dfGpZHDxx0TT0J2+cyHAqUC4grXG7D8SUMwHn5Du6g==",
   "success": true,
   "projectFilePath": "C:\\repozytoria\\netCore\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.packaging.tools.trimming\\1.1.0-preview1-26619-01\\microsoft.packaging.tools.trimming.1.1.0-preview1-26619-01.nupkg.sha512",
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\3.1.2\\microsoft.netcore.app.runtime.win-x64.3.1.2.nupkg.sha512",
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\3.1.2\\microsoft.windowsdesktop.app.runtime.win-x64.3.1.2.nupkg.sha512",
-    "C:\\Users\\micha\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\3.1.2\\microsoft.aspnetcore.app.runtime.win-x64.3.1.2.nupkg.sha512"
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.packaging.tools.trimming\\1.1.0-preview1-26619-01\\microsoft.packaging.tools.trimming.1.1.0-preview1-26619-01.nupkg.sha512"
   ],
   "logs": []
 }

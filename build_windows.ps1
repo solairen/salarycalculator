@@ -1,6 +1,4 @@
 $wix = Get-ItemProperty -Path "C:\Program Files (x86)\WiX Toolset v3.11\bin"
-$xml = [xml](Get-Content .\salarycalculator\SalaryCalculator.csproj)
-$ver = $xml.Project.PropertyGroup.Version
 
 if($null -ne $wix){
     Write-Output "Building application..."
@@ -8,7 +6,7 @@ if($null -ne $wix){
     Write-Output "Creating files..."
     candle.exe -arch x64 -dPlatform=x64 wix\*.wxs -o WiX\obj\
     Write-Output "Creating msi installer..."
-    light.exe WiX\obj\*.wixobj -loc wix\Common.wxl -ext WixUIExtension -o wix\bin\salarycalculator_$ver.msi
+    light.exe WiX\obj\*.wixobj -loc wix\Common.wxl -ext WixUIExtension -o wix\bin\salarycalculator.msi
     Write-Output "Installer has been created in wix\bin\"
 }
 else{
