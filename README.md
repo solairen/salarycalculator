@@ -39,7 +39,7 @@ Add "C:\Program Files (x86)\WiX Toolset v3.11\bin" to user path.
 
 ### To pull image from docker hub:
 
-* docker pull moleszek/salarycalculator:1.1
+* docker pull moleszek/salarycalculator:1.2
 
 ### Usage:
 
