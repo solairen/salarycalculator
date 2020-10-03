@@ -2,7 +2,7 @@
 
 ### About:
 
-Simpe application that calculates the salary based on the hours specified and the hourly wage.
+Simple application that calculates the salary based on the hours specified and the hourly wage.
 
 ### Language and Framework:
 
