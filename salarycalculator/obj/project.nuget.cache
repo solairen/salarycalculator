@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SDMJRzc8SJ8kxxp/XUf4LLWuKdgRhhjbtvxXmP+mkX90dfGpZHDxx0TT0J2+cyHAqUC4grXG7D8SUMwHn5Du6g==",
+  "dgSpecHash": "g8PBz/+nDJl943iBUFD3idhT79ERaVWaxT/U5OsiTOfBXsZy3ShEA+y39Gvp2tSGWQcZ7ZTtqE1Gz+sGV6+ULw==",
   "success": true,
-  "projectFilePath": "C:\\repozytoria\\netCore\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
+  "projectFilePath": "c:\\repozytoria\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.packaging.tools.trimming\\1.1.0-preview1-26619-01\\microsoft.packaging.tools.trimming.1.1.0-preview1-26619-01.nupkg.sha512"
   ],

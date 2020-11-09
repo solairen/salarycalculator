@@ -1,8 +1,8 @@
-name: Windows test
+name: Test on Windows
 on:
   pull_request
 jobs:
-  build:
+  test_windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@main

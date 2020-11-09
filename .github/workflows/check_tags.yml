@@ -1,0 +1,31 @@
+name: Check tags
+on:
+  pull_request
+jobs:
+  test_image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@main
+    - name: Get docker_tag registry
+      uses: actions/checkout@v2
+      with:
+        repository: solairen/docker_tag
+        ref: master
+        token: ${{ secrets.token }}
+        path: .github/actions/solairen/docker_tag
+    - name: Build image without tag latest
+      uses: ./.github/actions/solairen/docker_tag
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        repository: "moleszek/salarycalculator"
+        tag_latest: "false"
+        push: "false"
+    - name: Build image with tag latest
+      uses: ./.github/actions/solairen/docker_tag
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        repository: "moleszek/salarycalculator"
+        tag_latest: "true"
+        push: "false"
