@@ -1,8 +1,8 @@
 name: Linux test
-on: 
+on:
   pull_request
 jobs:
-  build:
+  test_linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
