@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repozytoria\\netCore\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
+      "projectUniqueName": "c:\\repozytoria\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
       "projectName": "SalaryCalculator",
-      "projectPath": "C:\\repozytoria\\netCore\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
+      "projectPath": "c:\\repozytoria\\salarycalculator\\salarycalculator\\SalaryCalculator.csproj",
       "packagesPath": "C:\\Users\\micha\\.nuget\\packages\\",
-      "outputPath": "C:\\repozytoria\\netCore\\salarycalculator\\salarycalculator\\obj\\",
+      "outputPath": "c:\\repozytoria\\salarycalculator\\salarycalculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\micha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -110,7 +110,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
