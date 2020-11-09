@@ -1,4 +1,4 @@
-name: Linux test
+name: Test on Ubuntu
 on:
   pull_request
 jobs:

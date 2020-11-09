@@ -1,13 +1,11 @@
-name: Docker image
+name: Check tags
 on:
-  release:
-    types:
-    - published
+  pull_request
 jobs:
-  publish_to_docker_hub:
+  test-image:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Get docker_tag registry
       uses: actions/checkout@v2
       with:
@@ -15,18 +13,19 @@ jobs:
         ref: master
         token: ${{ secrets.token }}
         path: .github/actions/solairen/docker_tag
-    - name: Publish to docker hub
+    - name: Build image without tag latest
       uses: ./.github/actions/solairen/docker_tag
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         repository: "moleszek/salarycalculator"
         tag_latest: "false"
-        push: "true"
-    - name: Update Docker README
-      uses: peter-evans/dockerhub-description@v2.1.0
-      env:
-        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        DOCKERHUB_REPOSITORY: moleszek/salarycalculator
-        README_FILEPATH: README.md
+        push: "false"
+    - name: Build image with tag latest
+      uses: ./.github/actions/solairen/docker_tag
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        repository: "moleszek/salarycalculator"
+        tag_latest: "true"
+        push: "false"
