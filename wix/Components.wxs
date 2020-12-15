@@ -4,7 +4,7 @@
     <ComponentGroup Id="ProductComponents">
       <ComponentRef Id="MainAppShortcut" />
     </ComponentGroup>
-    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\">
+    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\src\bin\Release\netcoreapp3.1\win10-x64\publish\">
       <Component Id="MainAppShortcut" Guid="{0995664D-AE63-4DD6-B894-708A99611370}">
         <Shortcut Id="MainAppShortcut"
                   Name="!(loc.ProductName_$(var.Platform))"

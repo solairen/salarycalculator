@@ -2,7 +2,7 @@ name: Test on Windows
 on:
   pull_request
 jobs:
-  test_windows:
+  Test_windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@main

@@ -2,30 +2,36 @@ name: Check tags
 on:
   pull_request
 jobs:
-  test_image:
+  Test_Image:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main
-    - name: Get docker_tag registry
+    - name: Checkout docker_tag registry
       uses: actions/checkout@v2
       with:
-        repository: solairen/docker_tag
+        repository: ${{ github.repository_owner }}/docker_tag
         ref: master
         token: ${{ secrets.token }}
-        path: .github/actions/solairen/docker_tag
+        path: .github/actions/docker_tag
     - name: Build image without tag latest
-      uses: ./.github/actions/solairen/docker_tag
+      uses: ./.github/actions/docker_tag
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: "moleszek/salarycalculator"
-        tag_latest: "false"
-        push: "false"
+        username: ${{ secrets.dockerhub_username }}
+        password: ${{ secrets.dockerhub_password }}
+        repository: moleszek/salarycalculator
+        tag_latest: false
+        push: false
+        github: false
+        token: ${{ secrets.TOKEN }}
+        owner: ${{ github.repository_owner }}
     - name: Build image with tag latest
-      uses: ./.github/actions/solairen/docker_tag
+      uses: ./.github/actions/docker_tag
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: "moleszek/salarycalculator"
-        tag_latest: "true"
-        push: "false"
+        username: ${{ secrets.dockerhub_username }}
+        password: ${{ secrets.dockerhub_password }}
+        repository: moleszek/salarycalculator
+        tag_latest: true
+        push: false
+        github: false
+        token: ${{ secrets.TOKEN }}
+        owner: ${{ github.repository_owner }}

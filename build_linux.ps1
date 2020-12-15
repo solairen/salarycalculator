@@ -1,1 +1,1 @@
-dotnet publish .\salarycalculator\SalaryCalculator.csproj -c Release -r linux-x64
+dotnet publish .\src\SalaryCalculator.csproj -c Release -r linux-x64

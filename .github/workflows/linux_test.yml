@@ -2,7 +2,7 @@ name: Test on Ubuntu
 on:
   pull_request
 jobs:
-  test_linux:
+  Test_Linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@main

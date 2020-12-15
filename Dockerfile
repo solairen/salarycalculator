@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build-env
 WORKDIR /app
  
 # Copy the project file and restore the dependencies
-COPY salarycalculator/*.csproj ./
+COPY src/*.csproj ./
 RUN dotnet restore
  
 # Copy the remaining source files and build the application
-COPY salarycalculator/. ./
+COPY src/. ./
 RUN dotnet publish -c Release -r linux-x64 -o out
  
 # Build the runtime image
