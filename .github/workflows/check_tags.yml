@@ -17,7 +17,7 @@ jobs:
       uses: ./.github/actions/docker_tag
       with:
         username: ${{ secrets.dockerhub_username }}
-        password: ${{ secrets.dockerhub_password }}
+        password: ${{ secrets.docker_token }}
         repository: moleszek/salarycalculator
         tag_latest: false
         push: false
@@ -28,7 +28,7 @@ jobs:
       uses: ./.github/actions/docker_tag
       with:
         username: ${{ secrets.dockerhub_username }}
-        password: ${{ secrets.dockerhub_password }}
+        password: ${{ secrets.docker_token }}
         repository: moleszek/salarycalculator
         tag_latest: true
         push: false
