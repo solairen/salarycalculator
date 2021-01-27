@@ -26,10 +26,10 @@ jobs:
         github: false
         token: ${{ secrets.TOKEN }}
         owner: ${{ github.repository_owner }}
-    - name: Update Docker README
-      uses: peter-evans/dockerhub-description@v2.1.0
-      env:
-        DOCKERHUB_USERNAME: ${{ secrets.dockerhub_username }}
-        DOCKERHUB_PASSWORD: ${{ secrets.dockerhub_password }}
-        DOCKERHUB_REPOSITORY: moleszek/salarycalculator
-        README_FILEPATH: README.md
+    #- name: Update Docker README
+    #  uses: peter-evans/dockerhub-description@v2.1.0
+    #  env:
+    #    DOCKERHUB_USERNAME: ${{ secrets.dockerhub_username }}
+    #    DOCKERHUB_PASSWORD: ${{ secrets.dockerhub_password }}
+    #    DOCKERHUB_REPOSITORY: moleszek/salarycalculator
+    #    README_FILEPATH: README.md
