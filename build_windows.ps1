@@ -2,7 +2,7 @@ $wix = Get-ItemProperty -Path "C:\Program Files (x86)\WiX Toolset v3.11\bin"
 
 if($null -ne $wix){
     Write-Output "Building application..."
-    dotnet publish .\salarycalculator\SalaryCalculator.csproj -c Release -r win10-x64
+    dotnet publish .\src\SalaryCalculator.csproj -c Release -r win10-x64
     Write-Output "Creating files..."
     candle.exe -arch x64 -dPlatform=x64 wix\*.wxs -o WiX\obj\
     Write-Output "Creating msi installer..."

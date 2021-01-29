@@ -3,88 +3,88 @@
   <Fragment>
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="cmpF22D40156F8E16FBFA89C752FF9D0EF9" Guid="{54CBCEA4-42FF-4D71-ADF9-CF39FC70AC62}">
-        <File Id="fil2DACDED111D2125FD9BAF52808E5CEB0" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\clrjit.dll" />
+        <File Id="fil2DACDED111D2125FD9BAF52808E5CEB0" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\clrjit.dll" />
       </Component>
       <Component Id="cmp742C123932C1A216E185167E7780B396" Guid="{B20CDB43-10CD-4708-B164-B6280820A077}">
-        <File Id="filD4F5DAB6FC380871476D90A9B278B655" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\coreclr.dll" />
+        <File Id="filD4F5DAB6FC380871476D90A9B278B655" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\coreclr.dll" />
       </Component>
       <Component Id="cmp0C2E6E9A00C3293AC27A114F5CD9CE2A" Guid="{FD47D9E6-E895-48F7-83BF-DCB1AEA4CDF6}">
-        <File Id="filC4BA033347D114D73E0BFDC4F138ED4B" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\hostfxr.dll" />
+        <File Id="filC4BA033347D114D73E0BFDC4F138ED4B" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\hostfxr.dll" />
       </Component>
       <Component Id="cmp6EBAE5ACCACC27065A435A0042E7BAED" Guid="{A2B0E0AC-BB9B-4EFB-92A8-CF9DB91E0049}">
-        <File Id="filBE3E8E1D40266192494C4DD3D256E4B0" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\hostpolicy.dll" />
+        <File Id="filBE3E8E1D40266192494C4DD3D256E4B0" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\hostpolicy.dll" />
       </Component>
       <Component Id="cmp8654E1D8A29D75D1863BECEDD37AC0AE" Guid="{BBC71621-AC85-4C7D-92A3-9150DF26F0C3}">
-        <File Id="filDFD8964B5B00E12A86C400251EF6F77E" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.deps.json" />
+        <File Id="filDFD8964B5B00E12A86C400251EF6F77E" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.deps.json" />
       </Component>
       <Component Id="cmp41E89377B0002CC2350CF2F309C7EF96" Guid="{A21AF1C1-9AD5-4318-BFDB-ECE9C2E0AE8C}">
-        <File Id="filED19878F18A70E195BF8CDAA0D0E8890" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.dll" />
+        <File Id="filED19878F18A70E195BF8CDAA0D0E8890" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.dll" />
       </Component>
       <Component Id="cmp19C77CF3AC944A208DF8B36302559887" Guid="{0715F9A5-6411-4315-BD05-D73ECB536C12}">
-        <File Id="filF35EB58FA1E5422AB618D784B6533883" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.exe" />
+        <File Id="filF35EB58FA1E5422AB618D784B6533883" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.exe" />
       </Component>
       <Component Id="cmp229973A4B38B4DF982D4C26CE23F4E19" Guid="{DEBABF0A-36A8-4ED9-8E96-692F17F8793E}">
-        <File Id="fil2168D59531F848FB810F200B4F7825B7" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.pdb" />
+        <File Id="fil2168D59531F848FB810F200B4F7825B7" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.pdb" />
       </Component>
       <Component Id="cmpB2FE459511D04B56BB563C276FBDE2EB" Guid="{127D37CD-1A23-49C9-88EF-3A9BB45B4FF7}">
-        <File Id="fil213AC1F9AB904B508327F204386E75FD" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.runtimeconfig.json" />
+        <File Id="fil213AC1F9AB904B508327F204386E75FD" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\salarycalculator.runtimeconfig.json" />
       </Component>
       <Component Id="cmp9548DA9A80FC4663B564F1BC5ED21C1F" Guid="{D7F8F100-8CC8-4D9E-9105-ABB91D3791A3}">
-        <File Id="fil7415F24418FF4358A224F3B779BB3AED" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Buffers.dll" />
+        <File Id="fil7415F24418FF4358A224F3B779BB3AED" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Buffers.dll" />
       </Component>
       <Component Id="cmp9753AB6E6415467493DFB5DFB83D8318" Guid="{AD7BBDBB-72B3-42E0-A4AA-BC60173B3668}">
-        <File Id="fil8EA112EE5BB34989ACD1D1A0063A5246" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Console.dll" />
+        <File Id="fil8EA112EE5BB34989ACD1D1A0063A5246" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Console.dll" />
       </Component>
       <Component Id="cmpABE448D44F054EAEA15F06CAA7175F02" Guid="{D8DB6E44-385D-42B9-A018-CD7FF5C62453}">
-        <File Id="fil65BA72A0BE544018B79ACEF111FA12FD" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Memory.dll" />
+        <File Id="fil65BA72A0BE544018B79ACEF111FA12FD" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Memory.dll" />
       </Component>
       <Component Id="cmp9B1A0A65A17947C6A649686B6F706F10" Guid="{3AAB02CF-7023-448E-A84B-5207FDAD1A0F}">
-        <File Id="fil6FE9C696BE33420391F924F9F6B10F6F" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Private.Corelib.dll" />
+        <File Id="fil6FE9C696BE33420391F924F9F6B10F6F" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Private.Corelib.dll" />
       </Component>
       <Component Id="cmp8F00C9F5A67D4AD1BB54BB870FFFB36F" Guid="{A56A1E5A-2E46-494D-A1C5-E62ECB71AE36}">
-        <File Id="fil7844D37F461A4A3BBD0DB2DBB5E55C7C" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Private.Uri.dll" />
+        <File Id="fil7844D37F461A4A3BBD0DB2DBB5E55C7C" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Private.Uri.dll" />
       </Component>
       <Component Id="cmpA835E696E307486B83E34AFC02A93845" Guid="{9B812E50-010E-4FCF-AE0E-13F562CD9BC3}">
-        <File Id="filCC7A46B3E0614C04AF394B6DF5B34663" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Resources.ResourceManager.dll" />
+        <File Id="filCC7A46B3E0614C04AF394B6DF5B34663" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Resources.ResourceManager.dll" />
       </Component>
       <Component Id="cmp0EEA87A0E7EB48A890AFF7BF31E94C18" Guid="{19B5D999-B0F7-4A88-81F3-0A9690A83290}">
-        <File Id="fil6A294D427FBA4F8AAEE6A534E130C2B3" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.dll" />
+        <File Id="fil6A294D427FBA4F8AAEE6A534E130C2B3" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.dll" />
       </Component>
       <Component Id="cmp6D3B0366263E4EBF88759240C02D2C16" Guid="{1E7833A5-C137-4CA7-ABD5-30B72A6E36BF}">
-        <File Id="fil3A2C0E18A5BC426EB9AA26EF6D24A767" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.Extensions.dll" />
+        <File Id="fil3A2C0E18A5BC426EB9AA26EF6D24A767" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.Extensions.dll" />
       </Component>
       <Component Id="cmp44F90DDA6DA0414F9713DC276C29302F" Guid="{7A747066-172D-46A3-8AC5-1B5E00DE8F4E}">
-        <File Id="filE67432FEA9AC4FA2B341DB8C459FA7D9" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.InteropServices.dll" />
+        <File Id="filE67432FEA9AC4FA2B341DB8C459FA7D9" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.InteropServices.dll" />
       </Component>
       <Component Id="cmp40196DD6F3504C2B98C62290EEE3C0AB" Guid="{B34DCDAF-53BB-4E46-BD78-18FC48778D89}">
-        <File Id="filC3E60BC5763D4005A3EE29F46E2EB829" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.InteropServices.RuntimeInformation.dll" />
+        <File Id="filC3E60BC5763D4005A3EE29F46E2EB829" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Runtime.InteropServices.RuntimeInformation.dll" />
       </Component>
       <Component Id="cmpC5BF67EF09EB4636A86999ED3E534AE6" Guid="{99329878-A6CD-4C93-B5C4-7921A1622707}">
-        <File Id="fil0747F442206C4B1CA8BC5447F8452A83" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Text.Encoding.Extensions.dll" />
+        <File Id="fil0747F442206C4B1CA8BC5447F8452A83" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Text.Encoding.Extensions.dll" />
       </Component>
       <Component Id="cmp70B4B57A6CE743518AD04C6AE199E92C" Guid="{C8161454-FFF2-4B3A-9DB2-EBB03DF50404}">
-        <File Id="filA4FB297A65994616888B2F23BF7E1F14" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.dll" />
+        <File Id="filA4FB297A65994616888B2F23BF7E1F14" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.dll" />
       </Component>
       <Component Id="cmp018869E2A4ED4E8AA134032265CB971B" Guid="{D49DA778-F2CF-4993-962B-2EBBE0B9117F}">
-        <File Id="filD5234AAB782F4C15BC0F1D547B888A86" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Tasks.dll" />
+        <File Id="filD5234AAB782F4C15BC0F1D547B888A86" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Tasks.dll" />
       </Component>
       <Component Id="cmp03F32D3770A84124937E9E3C5DF4EDBE" Guid="{123AD3D8-7B54-4137-B21C-ED288D3BB958}">
-        <File Id="fil5C46E0CA79594B5E9B35F977114D5659" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Collections.dll" />
+        <File Id="fil5C46E0CA79594B5E9B35F977114D5659" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Collections.dll" />
       </Component>
       <Component Id="cmpDF1496D5DC7E4019A1C6E3188183F614" Guid="{9CD909D8-4015-482B-ABB7-A53CABEAD545}">
-        <File Id="fil8C40679DEE194951B5119D553C5E68A7" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Debug.dll" />
+        <File Id="fil8C40679DEE194951B5119D553C5E68A7" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Debug.dll" />
       </Component>
       <Component Id="cmpC0B520C4600243189727B8269CAB300A" Guid="{0B464E82-E36F-46E4-9341-7100DCEDAA99}">
-        <File Id="fil02526E55EEFD4D6E85748830F7A45EA1" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Tools.dll" />
+        <File Id="fil02526E55EEFD4D6E85748830F7A45EA1" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Diagnostics.Tools.dll" />
       </Component>
       <Component Id="cmp3D209DB610F343F1A2657F2677EAAE8D" Guid="{5384D43E-E2BE-4709-8ACA-1E2043A0CDC9}">
-        <File Id="fil76A003F24F064F04BA271AC7E7E2600A" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.IO.FileSystem.dll" />
+        <File Id="fil76A003F24F064F04BA271AC7E7E2600A" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.IO.FileSystem.dll" />
       </Component>
       <Component Id="cmpDE4704471917499FABC94E84737D4093" Guid="{B69A5A18-26D9-425E-B2B8-99A8F2A710D4}">
-        <File Id="fil64D29DAB3CEA4B6D880BEED0D80BE00A" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Linq.dll" />
+        <File Id="fil64D29DAB3CEA4B6D880BEED0D80BE00A" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Linq.dll" />
       </Component>
       <Component Id="cmpDC42EAA057DC4D6F9265DF391B1A5C5F" Guid="{7823FCF3-FFD0-456E-B10A-4BE6D06474D0}">
-        <File Id="fil052D6E0B32C745E6ACBBFBF633372381" KeyPath="yes" Source="..\..\salarycalculator\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Thread.dll" />
+        <File Id="fil052D6E0B32C745E6ACBBFBF633372381" KeyPath="yes" Source="..\..\src\bin\Release\netcoreapp3.1\win10-x64\publish\System.Threading.Thread.dll" />
       </Component>
     </DirectoryRef>
   </Fragment>

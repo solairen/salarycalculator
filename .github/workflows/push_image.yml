@@ -1,32 +1,35 @@
-name: Push image
+name: Push image to Docker Hub
 on:
   release:
     types:
     - published
 jobs:
-  publish_to_docker_hub:
+  Publish_To_Docker_Hub:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Get docker_tag registry
+    - name: Checkout docker_tag registry
       uses: actions/checkout@v2
       with:
-        repository: solairen/docker_tag
+        repository: ${{ github.repository_owner }}/docker_tag
         ref: master
         token: ${{ secrets.token }}
-        path: .github/actions/solairen/docker_tag
+        path: .github/actions/docker_tag
     - name: Publish to docker hub
-      uses: ./.github/actions/solairen/docker_tag
+      uses: ./.github/actions/docker_tag
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        repository: "moleszek/salarycalculator"
-        tag_latest: "false"
-        push: "true"
-    - name: Update Docker README
-      uses: peter-evans/dockerhub-description@v2.1.0
-      env:
-        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        DOCKERHUB_REPOSITORY: moleszek/salarycalculator
-        README_FILEPATH: README.md
+        username: ${{ secrets.dockerhub_username }}
+        password: ${{ secrets.docker_token }}
+        repository: moleszek/salarycalculator
+        tag_latest: false
+        push: true
+        github: false
+        token: ${{ secrets.TOKEN }}
+        owner: ${{ github.repository_owner }}
+    #- name: Update Docker README
+    #  uses: peter-evans/dockerhub-description@v2.1.0
+    #  env:
+    #    DOCKERHUB_USERNAME: ${{ secrets.dockerhub_username }}
+    #    DOCKERHUB_PASSWORD: ${{ secrets.dockerhub_password }}
+    #    DOCKERHUB_REPOSITORY: moleszek/salarycalculator
+    #    README_FILEPATH: README.md
