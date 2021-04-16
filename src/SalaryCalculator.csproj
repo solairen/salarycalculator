@@ -6,6 +6,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <TrimUnusedDependencies>true</TrimUnusedDependencies>
     <Copyright>Funny Company</Copyright>
+    <Version>1.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
