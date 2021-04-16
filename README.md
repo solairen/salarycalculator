@@ -45,13 +45,12 @@ Add "C:\Program Files (x86)\WiX Toolset v3.11\bin" to user path.
 
 * Windows:
     
-    * Open C:\Program Files\Funny Company\SalaryCalculator.exe and enter values
-    * From CMD/PowerShell run "C:\Program Files\Funny Company\SalaryCalculator.exe -h/hours 100 -hw/hourlywage 10
+    * From CMD/PowerShell run "C:\Program Files\Funny Company\SalaryCalculator.exe -h/hours 100 -w/hourly-wage 10
 
 * Docker:
 
-    * docker run --rm moleszek/salarycalculator:1.2 -h/hours 100 -hw/hourlywage 10
+    * docker run --rm moleszek/salarycalculator:1.2 -h/hours 100 -w/hourly-wage 10
 
 * Linux:
 
-    * dotnet run SalaryCalculator.dll -h/hours 100 -hw/hourlywage 10
+    * dotnet run SalaryCalculator.dll -h/hours 100 -w/hourly-wage 10
