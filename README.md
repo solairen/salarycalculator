@@ -2,7 +2,7 @@
 
 ### About:
 
-Simple application that calculates the salary based on the hours specified and the hourly wage.
+Simple application that calculates the salary based on the specified hours and the hourly wage.
 
 ### Language and Framework:
 
@@ -37,21 +37,23 @@ Add "C:\Program Files (x86)\WiX Toolset v3.11\bin" to user path.
 
     * build_linux.ps1
 
+### Tag version
+Check latest container tag [version](https://hub.docker.com/repository/docker/moleszek/salarycalculator/tags?page=1&ordering=last_updated) and change **<x.x>** with proper tag version
+
 ### To pull image from docker hub:
 
-* docker pull moleszek/salarycalculator:1.2
+* docker pull moleszek/salarycalculator:<x.x>
 
 ### Usage:
 
 * Windows:
     
-    * Open C:\Program Files\Funny Company\SalaryCalculator.exe and enter values
-    * From CMD/PowerShell run "C:\Program Files\Funny Company\SalaryCalculator.exe -h/hours 100 -hw/hourlywage 10
+    * From CMD/PowerShell run "C:\Program Files\Funny Company\SalaryCalculator.exe -h/hours 100 -w/hourly-wage 10
 
 * Docker:
 
-    * docker run --rm moleszek/salarycalculator:1.2 -h/hours 100 -hw/hourlywage 10
+    * docker run --rm moleszek/salarycalculator:<x.x> -h/hours 100 -w/hourly-wage 10
 
 * Linux:
 
-    * dotnet run SalaryCalculator.dll -h/hours 100 -hw/hourlywage 10
+    * dotnet run SalaryCalculator.dll -h/hours 100 -w/hourly-wage 10
