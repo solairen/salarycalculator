@@ -1,6 +1,13 @@
 name: Test on Ubuntu
 on:
-  pull_request
+  push:
+    branches-ignore:
+      - "main"
+      - "master"
+  pull_request:
+    branches-ignore:
+      - "main"
+      - "master"
 jobs:
   Test_Linux:
     runs-on: ubuntu-latest
