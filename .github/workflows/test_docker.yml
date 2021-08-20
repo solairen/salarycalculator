@@ -1,4 +1,4 @@
-name: Check tags
+name: Test docker
 on:
   push:
     branches-ignore:
