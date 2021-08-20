@@ -52,7 +52,7 @@ Check latest container tag [version](https://hub.docker.com/repository/docker/mo
 
 * Docker:
 
-    * docker run --rm moleszek/salarycalculator:<x.x> -h/hours 100 -w/hourly-wage 10
+    * docker run --rm moleszek/salarycalculator:1.2 -h/hours 100 -w/hourly-wage 10
 
 * Linux:
 
