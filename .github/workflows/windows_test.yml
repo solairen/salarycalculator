@@ -1,6 +1,13 @@
 name: Test on Windows
 on:
-  pull_request
+  push:
+    branches-ignore:
+      - "main"
+      - "master"
+  pull_request:
+    branches-ignore:
+      - "main"
+      - "master"
 jobs:
   Test_windows:
     runs-on: windows-latest

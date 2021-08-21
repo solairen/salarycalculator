@@ -42,7 +42,7 @@ Check latest container tag [version](https://hub.docker.com/repository/docker/mo
 
 ### To pull image from docker hub:
 
-* docker pull moleszek/salarycalculator:<x.x>
+* docker pull moleszek/salarycalculator:latest
 
 ### Usage:
 
@@ -52,7 +52,7 @@ Check latest container tag [version](https://hub.docker.com/repository/docker/mo
 
 * Docker:
 
-    * docker run --rm moleszek/salarycalculator:<x.x> -h/hours 100 -w/hourly-wage 10
+    * docker run --rm moleszek/salarycalculator:latest -h/hours 100 -w/hourly-wage 10
 
 * Linux:
 
