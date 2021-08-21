@@ -37,9 +37,6 @@ Add "C:\Program Files (x86)\WiX Toolset v3.11\bin" to user path.
 
     * build_linux.ps1
 
-### Tag version
-Check latest container tag [version](https://hub.docker.com/repository/docker/moleszek/salarycalculator/tags?page=1&ordering=last_updated) and change **<x.x>** with proper tag version
-
 ### To pull image from docker hub:
 
 * docker pull moleszek/salarycalculator:latest
