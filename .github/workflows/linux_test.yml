@@ -1,19 +1,25 @@
+---
 name: Test on Ubuntu
 on:
   push:
     branches-ignore:
       - "main"
-      - "master"
   pull_request:
     branches-ignore:
       - "main"
-      - "master"
 jobs:
-  Test_Linux:
+  test:
+    name: Test on Ubuntu
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-    - uses: actions/setup-dotnet@v1
+    - name: Checkout ${{ github.repository }} repository
+      uses: actions/checkout@v2
       with:
-        dotnet-version: '3.1.x'
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        token: ${{ secrets.token }}
+    - name: Run test
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: "5.0.x"
     - run: dotnet test test/test.csproj

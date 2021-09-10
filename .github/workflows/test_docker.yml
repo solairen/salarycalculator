@@ -1,15 +1,16 @@
+---
 name: Test docker
 on:
   push:
     branches-ignore:
       - "main"
-      - "master"
   pull_request:
     branches-ignore:
       - "main"
-      - "master"
+
 jobs:
-  test_docker_image:
+  test:
+    name: Test docker image
     runs-on: ubuntu-latest
     container: docker:stable
     steps:
