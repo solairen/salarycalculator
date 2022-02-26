@@ -9,36 +9,42 @@ env:
   DOCKER_USER: ${{ secrets.docker_username }}
   DOCKER_TOKEN: ${{ secrets.docker_token }}
   DISCORD: ${{ secrets.discord_webhook }}
+  GH_TOKEN: ${{ secrets.token }}
 
 jobs:
   build:
     name: Build and push to Docker registry
     runs-on: ubuntu-latest
     steps:
-    - name: Login to Docker Hub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ env.DOCKER_USER }}
-        password: ${{ env.DOCKER_TOKEN }}
-    - name: Build and push with tag latest
-      uses: docker/build-push-action@v2
-      with:
-        file: Docker/Dockerfile
-        push: true
-        tags: moleszek/salarycalculator:latest
-    - name: Checkout repository
-    - name: Get version
-      run: |
-        $xml = [xml](Get-Content src/SalaryCalculator.csproj)
-        $version = $xml.Project.PropertyGroup.Version
-        echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-      shell: pwsh
-    - name: Build and push with current version
-      uses: docker/build-push-action@v2
-      with:
-        file: Docker/Dockerfile
-        push: true
-        tags: moleszek/salarycalculator:${{ env.BUILD_VERSION }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ env.DOCKER_USER }}
+          password: ${{ env.DOCKER_TOKEN }}
+      - name: Build and push with tag latest
+        uses: docker/build-push-action@v2
+        with:
+          file: Docker/Dockerfile
+          push: true
+          tags: moleszek/salarycalculator:latest
+      - name: Checkout ${{ github.repository }} repository
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository }}
+          ref: main
+          token: ${{ env.GH_TOKEN }}
+      - name: Get version
+        run: |
+          $xml = [xml](Get-Content src/SalaryCalculator.csproj)
+          $version = $xml.Project.PropertyGroup.Version
+          echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
+        shell: pwsh
+      - name: Build and push with current version
+        uses: docker/build-push-action@v2
+        with:
+          file: Docker/Dockerfile
+          push: true
+          tags: moleszek/salarycalculator:${{ env.BUILD_VERSION }}
   notify_on_success:
     name: Send notification on success
     needs:
