@@ -7,7 +7,7 @@ Simple application that calculates the salary based on the specified hours and t
 ### Language and Framework:
 
 * Language: C#
-* Framework: netCore 3.1
+* Framework: netCore 6.0
 * Tools: Wix Toolset
 
 ### Additional information:
