@@ -9,7 +9,7 @@ on:
       - "main"
 
 env:
-  DISCROD: ${{ secrets.discord_webhook }}
+  DISCORD: ${{ secrets.discord_webhook }}
   GH_TOKEN: ${{ secrets.token }}
 
 jobs:
