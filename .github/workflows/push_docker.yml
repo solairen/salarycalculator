@@ -8,7 +8,6 @@ on:
 env:
   DOCKER_USER: ${{ secrets.docker_username }}
   DOCKER_TOKEN: ${{ secrets.docker_token }}
-  DISCORD: ${{ secrets.discord_webhook }}
   GH_TOKEN: ${{ secrets.token }}
 
 jobs:
@@ -45,26 +44,3 @@ jobs:
           file: Docker/Dockerfile
           push: true
           tags: moleszek/salarycalculator:${{ env.BUILD_VERSION }}
-  notify_on_success:
-    name: Send notification on success
-    needs:
-      - build
-    if: ${{ success() }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: sarisia/actions-status-discord@v1
-        with:
-          webhook: ${{ env.DISCORD }}
-          description: "Successfully built and push docker image to DockerHub!"
-  notify_on_failure:
-    name: Send notification on failure
-    needs:
-      - build
-    if: ${{ failure() }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: sarisia/actions-status-discord@v1
-        with:
-          webhook: ${{ env.DISCORD }}
-          status: failure
-          description: "Failed to build and push docker image to DockerHub!"

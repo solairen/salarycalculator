@@ -2,52 +2,56 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
 
-namespace test
+namespace TestProject
 {
     [TestClass]
-    public class UnitTest1
+    public class SalaryCalculatorTests
     {
-        private static decimal _enterHours, _paymentValue, _sum;
-        private static string _hour, _value;
+        private decimal _enteredHours, _paymentValue, _sum;
+        private string _hour, _value;
 
         [TestMethod]
-        public void Test_dot(){
+        public void Test_Dot()
+        {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             _hour = "68.56";
             _value = "77.68";
-            _enterHours = Convert.ToDecimal(_hour);
+            _enteredHours = Convert.ToDecimal(_hour);
             _paymentValue = Convert.ToDecimal(_value);
-            _sum = Math.Round(Math.Abs(_enterHours * _paymentValue));
+            _sum = Math.Round(Math.Abs(_enteredHours * _paymentValue));
             Assert.AreEqual(5326, _sum);
         }
 
         [TestMethod]
-        public void Test_comma(){
+        public void Test_Comma()
+        {
             _hour = "29,10";
             _value = "10,20";
-            _enterHours = Convert.ToDecimal(_hour.Replace(',','.'));
-            _paymentValue = Convert.ToDecimal(_value.Replace(',','.'));
-            _sum = Math.Round(Math.Abs(_enterHours * _paymentValue));
+            _enteredHours = Convert.ToDecimal(_hour.Replace(',', '.'));
+            _paymentValue = Convert.ToDecimal(_value.Replace(',', '.'));
+            _sum = Math.Round(Math.Abs(_enteredHours * _paymentValue));
             Assert.AreEqual(297, _sum);
         }
 
         [TestMethod]
-        public void Test_comma_dot(){
+        public void Test_Comma_Dot()
+        {
             _hour = "777,10";
             _value = "10.991";
-            _enterHours = Convert.ToDecimal(_hour.Replace(',','.'));
+            _enteredHours = Convert.ToDecimal(_hour.Replace(',', '.'));
             _paymentValue = Convert.ToDecimal(_value);
-            _sum = Math.Round(Math.Abs(_enterHours * _paymentValue));
+            _sum = Math.Round(Math.Abs(_enteredHours * _paymentValue));
             Assert.AreEqual(8541, _sum);
         }
 
         [TestMethod]
-        public void Test_dot_comma(){
+        public void Test_Dot_Comma()
+        {
             _hour = "777.10";
             _value = "10,991";
-            _enterHours = Convert.ToDecimal(_hour);
-            _paymentValue = Convert.ToDecimal(_value.Replace(',','.'));
-            _sum = Math.Round(Math.Abs(_enterHours * _paymentValue));
+            _enteredHours = Convert.ToDecimal(_hour);
+            _paymentValue = Convert.ToDecimal(_value.Replace(',', '.'));
+            _sum = Math.Round(Math.Abs(_enteredHours * _paymentValue));
             Assert.AreEqual(8541, _sum);
         }
     }
