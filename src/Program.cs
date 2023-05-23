@@ -2,23 +2,31 @@
 using System.Threading;
 using CommandLine;
 
-namespace SalaryCalculator{
-    class Program{
-
-        public class Options{
+namespace SalaryCalculator
+{
+    class Program
+    {
+        public class Options
+        {
             [Option('h', "hours", Required = true, HelpText = "Enter worked hours.")]
-            public decimal _hours { get; set; }
+            public decimal Hours { get; set; }
 
             [Option('w', "hourly-wage", Required = true, HelpText = "Enter hourly wage.")]
-            public decimal _wage { get; set; }
+            public decimal HourlyWage { get; set; }
         }
 
-        static void Main(string[] args){
+        static void Main(string[] args)
+        {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-            Parser.Default.ParseArguments<Options>(args).WithParsed<Options>(o => {
-                Console.WriteLine($"Worked hours: {Math.Abs(o._hours)}");
-                Console.WriteLine($"Hourly rate: {Math.Abs(o._wage)}");
-                Console.WriteLine($"Payment: {Math.Round(Math.Abs(o._hours * o._wage))}");
+            Parser.Default.ParseArguments<Options>(args).WithParsed<Options>(options =>
+            {
+                decimal workedHours = Math.Abs(options.Hours);
+                decimal hourlyWage = Math.Abs(options.HourlyWage);
+                decimal payment = Math.Round(workedHours * hourlyWage);
+
+                Console.WriteLine($"Worked hours: {workedHours}");
+                Console.WriteLine($"Hourly rate: {hourlyWage}");
+                Console.WriteLine($"Payment: {payment}");
             });
         }
     }
