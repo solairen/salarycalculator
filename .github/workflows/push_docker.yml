@@ -27,7 +27,7 @@ jobs:
           push: true
           tags: moleszek/salarycalculator:latest
       - name: Checkout ${{ github.repository }} repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}
           ref: main
