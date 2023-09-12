@@ -21,7 +21,7 @@ jobs:
           username: ${{ env.DOCKER_USER }}
           password: ${{ env.DOCKER_TOKEN }}
       - name: Build and push with tag latest
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           file: Docker/Dockerfile
           push: true
@@ -39,7 +39,7 @@ jobs:
           echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         shell: pwsh
       - name: Build and push with current version
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           file: Docker/Dockerfile
           push: true
