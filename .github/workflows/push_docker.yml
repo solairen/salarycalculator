@@ -5,39 +5,39 @@ on:
     types:
     - published
 
-env:
-  DOCKER_USER: ${{ secrets.docker_username }}
-  DOCKER_TOKEN: ${{ secrets.docker_token }}
-  GH_TOKEN: ${{ secrets.token }}
-
 jobs:
   build:
     name: Build and push to Docker registry
     runs-on: ubuntu-latest
     steps:
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ env.DOCKER_USER }}
-          password: ${{ env.DOCKER_TOKEN }}
+          username: ${{ secrets.docker_username }}
+          password: ${{ secrets.docker_token }}
+
       - name: Build and push with tag latest
         uses: docker/build-push-action@v6
         with:
           file: Docker/Dockerfile
           push: true
           tags: moleszek/salarycalculator:latest
+
       - name: Checkout ${{ github.repository }} repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: ${{ github.repository }}
           ref: main
-          token: ${{ env.GH_TOKEN }}
+          token: ${{ secrets.token }}
+
       - name: Get version
         run: |
           $xml = [xml](Get-Content src/SalaryCalculator.csproj)
           $version = $xml.Project.PropertyGroup.Version
           echo "BUILD_VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         shell: pwsh
+
       - name: Build and push with current version
         uses: docker/build-push-action@v6
         with:
