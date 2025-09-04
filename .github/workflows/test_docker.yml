@@ -1,27 +1,21 @@
 ---
 name: Test docker
 on:
-  push:
-    branches-ignore:
-      - "main"
   pull_request:
-    branches-ignore:
-      - "main"
-
-env:
-  GH_TOKEN: ${{ secrets.token }}
+    types: [opened, synchronize, reopened]
 
 jobs:
   test:
     name: Test docker image
-    runs-on: ubuntu-latest
-    container: docker:stable
+    runs-on: ubuntu-24.04
+
     steps:
     - name: Checkout ${{ github.repository }} repository
       uses: actions/checkout@v5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
-        token: ${{ env.GH_TOKEN }}
+        token: ${{ secrets.token }}
+
     - name: Build dockerfile
       run: docker build -t salarycalculator -f Docker/Dockerfile .
