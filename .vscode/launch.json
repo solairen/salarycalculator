@@ -9,10 +9,12 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/src/bin/Debug/netcoreapp3.1/SalaryCalculator.dll",
+      "program": "${workspaceFolder}/src/bin/Debug/netcoreapp9.0/SalaryCalculator.dll",
       "args": [
-        "-h 168",
-        "-w 68.45"
+        "-h",
+        "168",
+        "-w",
+        "68.45"
       ],
       "cwd": "${workspaceFolder}/src",
       "console": "internalConsole",
