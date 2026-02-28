@@ -8,7 +8,7 @@ jobs:
   test:
     name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    
+
     strategy:
       matrix:
         os: [ubuntu-24.04, windows-latest]
@@ -25,6 +25,6 @@ jobs:
       uses: actions/setup-dotnet@v5
       with:
         dotnet-version: "6.0.x"
-        
+
     - name: Run tests
       run: dotnet test test/test.csproj

@@ -17,8 +17,8 @@ Chance from 0% to 100% to reproduce the issue.
 
 **How to reproduce**
 
-    1.
-    2.
+1.
+2.
 
 **Actual behavior**
 A clear and concise description of actual behavior.
