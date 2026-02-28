@@ -2,14 +2,14 @@
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
 
-  <Package Name="!(loc.ProductName_$(Platform))"
+  <Package Name="!(loc.ProductName_$(Platform)) $(BuildVersion)"
            Language="!(loc.Language)"
            Manufacturer="!(loc.Company)"
            Version="1.0.0"
            UpgradeCode="E84D97E3-413B-4994-B471-3D910272596F"
            InstallerVersion="500"
            Compressed="yes"
-           Scope="perMachine">
+           Scope="perUser">
 
     <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"
                   AllowSameVersionUpgrades="yes" />

@@ -78,6 +78,7 @@ jobs:
           -loc wix/Common.wxl
           -ext WixToolset.UI.wixext
           -d Platform=${{ matrix.platform }}
+          -d BuildVersion=${{ steps.version.outputs.VERSION }}-${{ steps.rc.outputs.RC_NUMBER }}
           -o wix/bin/${{ steps.artifact.outputs.MSI_NAME }}.msi
           wix/*.wxs
 

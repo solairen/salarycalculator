@@ -5,7 +5,7 @@
       <Directory Id="InstallProgramMenuFolder" Name="!(loc.ProductNameFolder)" />
     </StandardDirectory>
 
-    <StandardDirectory Id="ProgramFiles6432Folder">
+    <StandardDirectory Id="LocalAppDataFolder">
       <Directory Id="FunnyCompany" Name="!(loc.CompanyNameFolder)">
         <Directory Id="INSTALLFOLDER" Name="!(loc.ProductNameFolder)" />
       </Directory>

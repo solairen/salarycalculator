@@ -1,6 +1,8 @@
 param(
     [ValidateSet("x64", "arm64")]
-    [string]$Platform = "x64"
+    [string]$Platform = "x64",
+
+    [string]$BuildVersion = "1.0.0"
 )
 
 $RuntimeMap = @{
@@ -18,6 +20,7 @@ wix build `
     -loc wix\Common.wxl `
     -ext WixToolset.UI.wixext `
     -d Platform=$Platform `
+    -d BuildVersion=$BuildVersion `
     -o wix\bin\salarycalculator-$Platform.msi `
     wix\*.wxs
 
