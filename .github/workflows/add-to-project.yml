@@ -1,4 +1,4 @@
-name: 🤖 Add PR from Dependabot to project
+name: Add PR from Dependabot to project
 
 on:
   pull_request:
@@ -8,11 +8,11 @@ on:
 
 jobs:
   add-to-project:
-    name: ➕ Add PR from Dependabot to project
+    name: Add PR from Dependabot to project
     runs-on: ubuntu-24.04
 
     steps:
-      - name: 🛠️ Add PR from Dependabot to project
+      - name: Add PR from Dependabot to project
         uses: actions/add-to-project@v1.0.2
         with:
           project-url: https://github.com/users/solairen/projects/35

@@ -1,39 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <?if $(var.Platform)=x64 ?>
-  <?define ProductCode = "*" ?>
-  <?else?>
-  <?define ProductCode = "*" ?>
-  <?endif?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
 
-  <?define UpgradeCode = "{E84D97E3-413B-4994-B471-3D910272596F}" ?>
-  <?define BuildVersion = "!(bind.FileVersion.filF35EB58FA1E5422AB618D784B6533883)" ?>
-
-  <Product Id="$(var.ProductCode)" 
-           Name="!(loc.ProductName_$(var.Platform))"
+  <Package Name="!(loc.ProductName_$(Platform)) $(BuildVersion)"
            Language="!(loc.Language)"
            Manufacturer="!(loc.Company)"
-           Version="$(var.BuildVersion)" 
-           UpgradeCode="$(var.UpgradeCode)">
-    <Package InstallerVersion="200"
-             Compressed="yes" 
-             InstallScope="perMachine" 
-             Platform="$(var.Platform)"
-             Manufacturer="!(loc.Company)"
-             Languages="!(loc.Language)" />
+           Version="1.0.0"
+           UpgradeCode="E84D97E3-413B-4994-B471-3D910272596F"
+           InstallerVersion="500"
+           Compressed="yes"
+           Scope="perUser">
 
-    <Upgrade Id="$(var.UpgradeCode)">
-      <UpgradeVersion Minimum="$(var.BuildVersion)" Property="NEWERPRODUCTFOUND" OnlyDetect="yes" IncludeMinimum="yes" />
-    </Upgrade>
+    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)"
+                  AllowSameVersionUpgrades="yes" />
 
-    <MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeErrorMessage)" AllowDowngrades="no" AllowSameVersionUpgrades="yes" />
     <MediaTemplate EmbedCab="yes" />
 
-    <UIRef Id="WixUI_Minimal" />
-    <WixVariable Id="WixUILicenseRtf" Value="..\assets\eula.rtf" />
+    <ui:WixUI Id="WixUI_Minimal" />
+    <WixVariable Id="WixUILicenseRtf" Value="wix\Assets\eula.rtf" />
+
     <Feature Id="ProductFeature" Title="Salary Calculator" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="PublishedComponents" />
     </Feature>
-  </Product>
+  </Package>
 </Wix>

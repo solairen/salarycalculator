@@ -1,0 +1,89 @@
+---
+name: Build Installer
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: Build MSI (${{ matrix.platform }})
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        platform: [x64, arm64]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Install WiX Toolset
+        run: dotnet tool install --global wix --version 6.0.2
+
+      - name: Install WiX UI extension
+        run: wix extension add WixToolset.UI.wixext/6.0.2 -g
+
+      - name: Get version from csproj
+        id: version
+        run: |
+          $xml = [xml](Get-Content src/SalaryCalculator.csproj)
+          $version = $xml.Project.PropertyGroup.Version
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Determine RC number
+        id: rc
+        run: |
+          $prNumber = "${{ github.event.pull_request.number }}"
+          $runNumber = "${{ github.run_number }}"
+          echo "RC_NUMBER=rc${prNumber}.${runNumber}" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Set artifact name
+        id: artifact
+        run: |
+          $version = "${{ steps.version.outputs.VERSION }}"
+          $platform = "${{ matrix.platform }}"
+          $rc = "${{ steps.rc.outputs.RC_NUMBER }}"
+          $name = "salarycalculator-${version}-${rc}-${platform}"
+          echo "MSI_NAME=$name" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Map platform to runtime identifier
+        id: rid
+        run: |
+          $map = @{ "x64" = "win-x64"; "arm64" = "win-arm64" }
+          $rid = $map["${{ matrix.platform }}"]
+          echo "RID=$rid" >> $env:GITHUB_OUTPUT
+        shell: pwsh
+
+      - name: Publish application
+        run: >
+          dotnet publish src/SalaryCalculator.csproj
+          -c Release
+          -r ${{ steps.rid.outputs.RID }}
+          -o publish
+
+      - name: Build MSI installer
+        run: >
+          wix build
+          -arch ${{ matrix.platform }}
+          -loc wix/Common.wxl
+          -ext WixToolset.UI.wixext
+          -d Platform=${{ matrix.platform }}
+          -d BuildVersion=${{ steps.version.outputs.VERSION }}-${{ steps.rc.outputs.RC_NUMBER }}
+          -o wix/bin/${{ steps.artifact.outputs.MSI_NAME }}.msi
+          wix/*.wxs
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.artifact.outputs.MSI_NAME }}
+          path: wix/bin/${{ steps.artifact.outputs.MSI_NAME }}.msi

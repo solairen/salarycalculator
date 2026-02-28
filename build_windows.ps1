@@ -1,11 +1,27 @@
-if (Test-Path -Path "C:\Program Files (x86)\WiX Toolset v3.11\bin") {
-    Write-Output "Building application..."
-    dotnet publish .\src\SalaryCalculator.csproj -c Release -r win10-x64
-    Write-Output "Creating files..."
-    & "candle.exe" -arch x64 -dPlatform=x64 wix\*.wxs -o WiX\obj\
-    Write-Output "Creating msi installer..."
-    & "light.exe" WiX\obj\*.wixobj -loc wix\Common.wxl -ext WixUIExtension -o wix\bin\salarycalculator.msi
-    Write-Output "Installer has been created in wix\bin\"
-} else {
-    Write-Output "WiX Toolset is not installed or not added to the environment path"
+param(
+    [ValidateSet("x64", "arm64")]
+    [string]$Platform = "x64",
+
+    [string]$BuildVersion = "1.0.0"
+)
+
+$RuntimeMap = @{
+    "x64"   = "win-x64"
+    "arm64" = "win-arm64"
 }
+$RuntimeId = $RuntimeMap[$Platform]
+
+Write-Output "Building application for $Platform ($RuntimeId)..."
+dotnet publish .\src\SalaryCalculator.csproj -c Release -r $RuntimeId -o .\publish
+
+Write-Output "Creating MSI installer ($Platform)..."
+wix build `
+    -arch $Platform `
+    -loc wix\Common.wxl `
+    -ext WixToolset.UI.wixext `
+    -d Platform=$Platform `
+    -d BuildVersion=$BuildVersion `
+    -o wix\bin\salarycalculator-$Platform.msi `
+    wix\*.wxs
+
+Write-Output "Installer created: wix\bin\salarycalculator-$Platform.msi"

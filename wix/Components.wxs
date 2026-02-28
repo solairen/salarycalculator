@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
   <Fragment>
     <ComponentGroup Id="ProductComponents">
       <ComponentRef Id="MainAppShortcut" />
+      <ComponentRef Id="PathEnvVariable" />
     </ComponentGroup>
-    <DirectoryRef Id="INSTALLFOLDER" FileSource="..\src\bin\Release\netcoreapp3.1\win10-x64\publish\">
+
+    <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="MainAppShortcut" Guid="{0995664D-AE63-4DD6-B894-708A99611370}">
-        <Shortcut Id="MainAppShortcut"
-                  Name="!(loc.ProductName_$(var.Platform))"
+        <Shortcut Id="MainAppDesktopShortcut"
+                  Name="!(loc.ProductName_$(Platform))"
                   Target="[INSTALLFOLDER]SalaryCalculator.exe"
                   Directory="InstallProgramMenuFolder"
-                  WorkingDirectory="INSTALLFOLDER"
-                  />
-        <RegistryValue Id="RegShortcutKey" Root="HKCU" Key="SOFTWARE\!(loc.ProductNameFolder)" Name="Shortcut" Value="1" Type="integer" KeyPath="yes" />
+                  WorkingDirectory="INSTALLFOLDER" />
+        <RegistryValue Id="RegShortcutKey"
+                       Root="HKCU"
+                       Key="SOFTWARE\!(loc.ProductNameFolder)"
+                       Name="Shortcut"
+                       Value="1"
+                       Type="integer"
+                       KeyPath="yes" />
         <RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall" />
+      </Component>
+
+      <Component Id="PathEnvVariable" Guid="{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}">
+        <Environment Id="PathEntry"
+                     Name="PATH"
+                     Value="[INSTALLFOLDER]"
+                     Permanent="no"
+                     Part="last"
+                     Action="set"
+                     System="no" />
+        <RegistryValue Id="RegPathKey"
+                       Root="HKCU"
+                       Key="SOFTWARE\!(loc.ProductNameFolder)"
+                       Name="PathAdded"
+                       Value="1"
+                       Type="integer"
+                       KeyPath="yes" />
       </Component>
     </DirectoryRef>
   </Fragment>
