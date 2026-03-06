@@ -18,7 +18,7 @@ jobs:
           password: ${{ secrets.docker_token }}
 
       - name: Build and push with tag latest
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           file: Docker/Dockerfile
           push: true
@@ -39,7 +39,7 @@ jobs:
         shell: pwsh
 
       - name: Build and push with current version
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           file: Docker/Dockerfile
           push: true
